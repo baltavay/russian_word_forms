@@ -20,10 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-base_form=RussianWordForms.get_base_form("облаками")
-=> ["ОБЛАКО"]
-RussianWordForms.inflect(base_form.first)
-=> ["ОБЛАКА", "ОБЛАКУ", "ОБЛАКОМ", "ОБЛАКЕ", "ОБЛАКАМ", "ОБЛАКАМИ", "ОБЛАКАХ"]
+    base_form=RussianWordForms.get_base_form("облаками")
+    => ["ОБЛАКО"]
+    RussianWordForms.inflect(base_form.first)
+    => ["ОБЛАКА", "ОБЛАКУ", "ОБЛАКОМ", "ОБЛАКЕ", "ОБЛАКАМ", "ОБЛАКАМИ", "ОБЛАКАХ"]
 
 
 ## Contributing
