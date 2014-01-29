@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["maksat.mansurov@gmail.com"]
   spec.description   = %q{Gem detects wordforms. It uses russian ispell dictionary written by Alexander I. Lebedev}
   spec.summary       = %q{Gem detects wordforms}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/baltavay/russian_word_forms"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
