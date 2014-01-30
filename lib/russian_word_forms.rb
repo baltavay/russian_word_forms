@@ -10,7 +10,7 @@ module RussianWordForms
     flags=@dictionary.dictionary[word]
     output=[]
     output<<word if !flags.kind_of?(Array)
-    flags=@rules.rules.keys.join if flags.kind_of?(Array)&&flags.empty? # if not found in dictionary 
+    flags=@rules.rules.keys.join if flags.empty? # if not found in dictionary 
     flags.each_char do |flag|
       rules=@rules.rules[flag]
       rules.keys.each do |rule|
