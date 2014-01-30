@@ -9,7 +9,8 @@ module RussianWordForms
     word=word.mb_chars.upcase.to_s
     flags=@dictionary.dictionary[word]
     output=[]
-    flags=@rules.rules.keys.join if flags.empty? # if not found in dictionary 
+    output<<word if !flags.kind_of?(Array)
+    flags=@rules.rules.keys.join if flags.kind_of?(Array)&&flags.empty? # if not found in dictionary 
     flags.each_char do |flag|
       rules=@rules.rules[flag]
       rules.keys.each do |rule|
@@ -28,13 +29,13 @@ module RussianWordForms
         end
       end  
     end
-    output
+    output.uniq
   end
   def self.get_base_form(word)
     word=word.mb_chars.upcase.to_s
     flags=@dictionary.dictionary[word]
     variants=[]
-    variants<<word if !flags.empty?
+    variants<<word if !flags.kind_of?(Array)
     @rules.rules.keys.each do |flag|
       rules=@rules.rules[flag]
       rules.keys.each do |rule|
@@ -58,7 +59,7 @@ module RussianWordForms
     end
     output=[]
     variants.each do |variant|
-      if !@dictionary.dictionary[variant].empty?&&self.inflect(variant).any? { |w| w==word }
+      if !@dictionary.dictionary[variant].kind_of?(Array)&&self.inflect(variant).any? { |w| w==word }
         output<<variant
       end
     end
