@@ -16,8 +16,8 @@
 #	Affix table for Russian
 #
 
-nroffchars      ().\\*
-texchars        ()\[]{}<\>\\$*.%
+# nroffchars      ().\\*
+# texchars        ()\[]{}<\>\\$*.%
 
 # First we declare the character set.
 
@@ -69,7 +69,7 @@ texchars        ()\[]{}<\>\\$*.%
 
 #prefixes
 
-suffixes
+#suffixes
 
 flag *L:
 #
